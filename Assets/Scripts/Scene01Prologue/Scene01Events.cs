@@ -100,7 +100,7 @@ public class Scene01Events : MonoBehaviour
         textBox.SetActive(true);
         // Text 
         charName.GetComponent<TMPro.TMP_Text>().text = "???";
-        textToSpeak = "We believe that the attack was made by cybercriminals.";
+        textToSpeak = "We do suspect that the attack on the intercoms was a one person ordeal.";
         textBox.GetComponent<TMPro.TMP_Text>().text = textToSpeak;
         currentTextLength = textToSpeak.Length;
         TextCreator.runTextPrint = true;
@@ -120,7 +120,8 @@ public class Scene01Events : MonoBehaviour
         textBox.SetActive(true);
         // Text 
         charName.GetComponent<TMPro.TMP_Text>().text = "???";
-        textToSpeak = "We do suspect that the attack on the intercoms was a one person ordeal. However, we haven’t gathered enough evidence to prove that yet.";
+        textToSpeak = "However, we haven’t gathered enough evidence to prove that yet.";
+        textBox.GetComponent<TMPro.TMP_Text>().text = textToSpeak;
         currentTextLength = textToSpeak.Length;
         TextCreator.runTextPrint = true;
         yield return new WaitForSeconds(0.05f);
@@ -216,7 +217,7 @@ IEnumerator EventNine()
         textBox.SetActive(true);
         // Text 
         charName.GetComponent<TMPro.TMP_Text>().text = "???";
-        textToSpeak = "That is why it is crucial we find the perpetrators as soon as possible.";
+        textToSpeak = "That is why it is crucial we find the perpetrator as soon as possible.";
         textBox.GetComponent<TMPro.TMP_Text>().text = textToSpeak;
         currentTextLength = textToSpeak.Length;
         TextCreator.runTextPrint = true;
@@ -284,6 +285,48 @@ IEnumerator EventEleven()
         nextButton.SetActive(true);
         eventPos = 13;
     }
+
+    // THIS IS WHEN DETCTIVE CARMINE IS REVEALED
+    IEnumerator EventThirteen()
+    {
+        // event 13
+        nextButton.SetActive(false);
+        charUnknown.SetActive(false);
+        charDcarmine.SetActive(true);
+        textBox.SetActive(true);
+        // Text 
+        charName.GetComponent<TMPro.TMP_Text>().text = "Detective Carmine";
+        textToSpeak = "We need to find out who was behind the intercom attack.";
+        textBox.GetComponent<TMPro.TMP_Text>().text = textToSpeak;
+        currentTextLength = textToSpeak.Length;
+        TextCreator.runTextPrint = true;
+        yield return new WaitForSeconds(0.05f);
+        yield return new WaitForSeconds(1);
+        yield return new WaitUntil(()=> textLength == currentTextLength);
+        yield return new WaitForSeconds(0.05f);
+        nextButton.SetActive(true);
+        eventPos = 14;
+    }
+    IEnumerator EventFourteen()
+    {
+        // event 14
+        nextButton.SetActive(false);
+        charUnknown.SetActive(false);
+        charDcarmine.SetActive(true);
+        textBox.SetActive(true);
+        // Text 
+        charName.GetComponent<TMPro.TMP_Text>().text = "Detective Carmine";
+        textToSpeak = "Once we get the intel, we will tip the NYPD so they can make the proper arrests.";
+        textBox.GetComponent<TMPro.TMP_Text>().text = textToSpeak;
+        currentTextLength = textToSpeak.Length;
+        TextCreator.runTextPrint = true;
+        yield return new WaitForSeconds(0.05f);
+        yield return new WaitForSeconds(1);
+        yield return new WaitUntil(()=> textLength == currentTextLength);
+        yield return new WaitForSeconds(0.05f);
+        nextButton.SetActive(true);
+        eventPos = 15;
+    }
     public void NextButton()
     {
         if (eventPos == 1)
@@ -294,7 +337,7 @@ IEnumerator EventEleven()
         {
             StartCoroutine(EventTwo());
         }
-        if (eventPos == 3)
+       if (eventPos == 3)
         {
             StartCoroutine(EventThree());
         }
@@ -333,6 +376,14 @@ IEnumerator EventEleven()
         if (eventPos == 12)
         {
             StartCoroutine(EventTweleve());
+        }
+        if (eventPos == 13)
+        {
+            StartCoroutine(EventThirteen());
+        }
+        if (eventPos == 14)
+        {
+            StartCoroutine(EventFourteen());
         }
 
     }
