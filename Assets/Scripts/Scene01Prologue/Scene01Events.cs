@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Scene01Events : MonoBehaviour
 {
@@ -8,7 +9,8 @@ public class Scene01Events : MonoBehaviour
     // Variables
     public GameObject fadeScreenIn;
     public GameObject charUnknown;
-    public GameObject charDcarmine;
+    public GameObject charDcarmineFade;
+     public GameObject charDcarmine;
     // Text Variables
     public GameObject textBox;
     [SerializeField] string textToSpeak;
@@ -37,9 +39,8 @@ public class Scene01Events : MonoBehaviour
     {
         // event 0 
         yield return new WaitForSeconds(2);
-        fadeScreenIn.SetActive(false);
+        fadeScreenIn.SetActive(true);
         charUnknown.SetActive(true);
-        yield return new WaitForSeconds(2);
         // Where text function will go
         mainTextObject.SetActive(true);
         textToSpeak = "In October of 202X, The MTA’s intercoms were compromised, leading to an accident and delays on the Lexington Avenue line.";
@@ -292,9 +293,11 @@ IEnumerator EventEleven()
         // event 13
         nextButton.SetActive(false);
         charUnknown.SetActive(false);
+        charDcarmineFade.SetActive(true);
+        yield return new WaitForSeconds(1);
         charDcarmine.SetActive(true);
         textBox.SetActive(true);
-        // Text 
+        // Text
         charName.GetComponent<TMPro.TMP_Text>().text = "Detective Carmine";
         textToSpeak = "We need to find out who was behind the intercom attack.";
         textBox.GetComponent<TMPro.TMP_Text>().text = textToSpeak;
@@ -327,6 +330,19 @@ IEnumerator EventEleven()
         nextButton.SetActive(true);
         eventPos = 15;
     }
+    IEnumerator EventFifteen()
+    {
+        // event 15
+        nextButton.SetActive(false);
+        charDcarmine.SetActive(true);
+        textBox.SetActive(true);
+        // Text 
+        fadeOut.SetActive(true);
+        yield return new WaitForSeconds(2);
+        eventPos = 16;
+        SceneManager.LoadScene(3);
+    }
+    
     public void NextButton()
     {
         if (eventPos == 1)
@@ -385,6 +401,9 @@ IEnumerator EventEleven()
         {
             StartCoroutine(EventFourteen());
         }
-
+        if (eventPos == 15)
+        {
+            StartCoroutine(EventFifteen());
+        }
     }
 }
