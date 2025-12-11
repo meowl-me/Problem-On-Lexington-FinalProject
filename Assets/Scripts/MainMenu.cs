@@ -15,10 +15,25 @@ public class MainMenu : MonoBehaviour
 
     public void StartGame()
     {
+        buttonClick.Play();
         fadeOut.SetActive(true);
         StartCoroutine(TransferToFirstScene());
-        
     }
+
+    public void Credits()
+    {
+        buttonClick.Play();
+        fadeOut.SetActive(true);
+        StartCoroutine(TransferToCredits());
+    }
+
+     public void Quit()
+    {
+        buttonClick.Play();
+        fadeOut.SetActive(true);
+        StartCoroutine(TransferToQuitProgram());
+    }
+
 
     // Update is called once per frame
     void Update()
@@ -30,5 +45,17 @@ public class MainMenu : MonoBehaviour
     {
         yield return new WaitForSeconds(3);
         SceneManager.LoadScene (1);
+    }
+
+     IEnumerator TransferToCredits()
+    {
+        yield return new WaitForSeconds(3);
+        SceneManager.LoadScene (2);
+    }
+
+     IEnumerator TransferToQuitProgram()
+    {
+        yield return new WaitForSeconds(3);
+        Application.Quit();
     }
 }
