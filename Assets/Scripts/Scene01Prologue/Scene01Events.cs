@@ -73,12 +73,266 @@ public class Scene01Events : MonoBehaviour
         nextButton.SetActive(true);
         eventPos = 2;
     }
+    IEnumerator EventTwo()
+    {
+        // event 2
+        nextButton.SetActive(false);
+        charUnknown.SetActive(true);
+        textBox.SetActive(true);
+        // Text 
+        charName.GetComponent<TMPro.TMP_Text>().text = "???";
+        textToSpeak = "Thousands of people take the Lexington line to get to their destinations.";
+        textBox.GetComponent<TMPro.TMP_Text>().text = textToSpeak;
+        currentTextLength = textToSpeak.Length;
+        TextCreator.runTextPrint = true;
+        yield return new WaitForSeconds(0.05f);
+        yield return new WaitForSeconds(1);
+        yield return new WaitUntil(()=> textLength == currentTextLength);
+        yield return new WaitForSeconds(0.05f);
+        nextButton.SetActive(true);
+        eventPos = 3;
+    }
+    IEnumerator EventThree()
+    {
+        // event 3
+        nextButton.SetActive(false);
+        charUnknown.SetActive(true);
+        textBox.SetActive(true);
+        // Text 
+        charName.GetComponent<TMPro.TMP_Text>().text = "???";
+        textToSpeak = "We believe that the attack was made by cybercriminals.";
+        textBox.GetComponent<TMPro.TMP_Text>().text = textToSpeak;
+        currentTextLength = textToSpeak.Length;
+        TextCreator.runTextPrint = true;
+        yield return new WaitForSeconds(0.05f);
+        yield return new WaitForSeconds(1);
+        yield return new WaitUntil(()=> textLength == currentTextLength);
+        yield return new WaitForSeconds(0.05f);
+        nextButton.SetActive(true);
+        eventPos = 4;
+    }
 
+     IEnumerator EventFour()
+    {
+        // event 4
+        nextButton.SetActive(false);
+        charUnknown.SetActive(true);
+        textBox.SetActive(true);
+        // Text 
+        charName.GetComponent<TMPro.TMP_Text>().text = "???";
+        textToSpeak = "We do suspect that the attack on the intercoms was a one person ordeal. However, we haven’t gathered enough evidence to prove that yet.";
+        currentTextLength = textToSpeak.Length;
+        TextCreator.runTextPrint = true;
+        yield return new WaitForSeconds(0.05f);
+        yield return new WaitForSeconds(1);
+        yield return new WaitUntil(()=> textLength == currentTextLength);
+        yield return new WaitForSeconds(0.05f);
+        nextButton.SetActive(true);
+        eventPos = 5;
+    }
+
+     IEnumerator EventFive()
+    {
+        // event 5
+        nextButton.SetActive(false);
+        charUnknown.SetActive(true);
+        textBox.SetActive(true);
+        // Text 
+        charName.GetComponent<TMPro.TMP_Text>().text = "???";
+        textToSpeak = "It is rare that a small firm like us would take on a case like this.";
+        textBox.GetComponent<TMPro.TMP_Text>().text = textToSpeak;
+        currentTextLength = textToSpeak.Length;
+        TextCreator.runTextPrint = true;
+        yield return new WaitForSeconds(0.05f);
+        yield return new WaitForSeconds(1);
+        yield return new WaitUntil(()=> textLength == currentTextLength);
+        yield return new WaitForSeconds(0.05f);
+        nextButton.SetActive(true);
+        eventPos = 6;
+    }
+    IEnumerator EventSix()
+    {
+        // event 6
+        nextButton.SetActive(false);
+        charUnknown.SetActive(true);
+        textBox.SetActive(true);
+        // Text 
+        charName.GetComponent<TMPro.TMP_Text>().text = "???";
+        textToSpeak = "Usually the NYPD, or even the FBI would be involved in these matters.";
+        textBox.GetComponent<TMPro.TMP_Text>().text = textToSpeak;
+        currentTextLength = textToSpeak.Length;
+        TextCreator.runTextPrint = true;
+        yield return new WaitForSeconds(0.05f);
+        yield return new WaitForSeconds(1);
+        yield return new WaitUntil(()=> textLength == currentTextLength);
+        yield return new WaitForSeconds(0.05f);
+        nextButton.SetActive(true);
+        eventPos = 7;
+    }
+
+ IEnumerator EventSeven()
+    {
+        // event 7
+        nextButton.SetActive(false);
+        charUnknown.SetActive(true);
+        textBox.SetActive(true);
+        // Text 
+        charName.GetComponent<TMPro.TMP_Text>().text = "???";
+        textToSpeak = "I guess the MTA wants to keep this investigation low profile.";
+        textBox.GetComponent<TMPro.TMP_Text>().text = textToSpeak;
+        currentTextLength = textToSpeak.Length;
+        TextCreator.runTextPrint = true;
+        yield return new WaitForSeconds(0.05f);
+        yield return new WaitForSeconds(1);
+        yield return new WaitUntil(()=> textLength == currentTextLength);
+        yield return new WaitForSeconds(0.05f);
+        nextButton.SetActive(true);
+        eventPos = 8;
+    }
+    IEnumerator EventEight()
+    {
+        // event 8
+        nextButton.SetActive(false);
+        charUnknown.SetActive(true);
+        textBox.SetActive(true);
+        // Text 
+        charName.GetComponent<TMPro.TMP_Text>().text = "???";
+        textToSpeak = "We cannot have another incident like this again.";
+        textBox.GetComponent<TMPro.TMP_Text>().text = textToSpeak;
+        currentTextLength = textToSpeak.Length;
+        TextCreator.runTextPrint = true;
+        yield return new WaitForSeconds(0.05f);
+        yield return new WaitForSeconds(1);
+        yield return new WaitUntil(()=> textLength == currentTextLength);
+        yield return new WaitForSeconds(0.05f);
+        nextButton.SetActive(true);
+        eventPos = 9;
+    }
+IEnumerator EventNine()
+    {
+        // event 9
+        nextButton.SetActive(false);
+        charUnknown.SetActive(true);
+        textBox.SetActive(true);
+        // Text 
+        charName.GetComponent<TMPro.TMP_Text>().text = "???";
+        textToSpeak = "That is why it is crucial we find the perpetrators as soon as possible.";
+        textBox.GetComponent<TMPro.TMP_Text>().text = textToSpeak;
+        currentTextLength = textToSpeak.Length;
+        TextCreator.runTextPrint = true;
+        yield return new WaitForSeconds(0.05f);
+        yield return new WaitForSeconds(1);
+        yield return new WaitUntil(()=> textLength == currentTextLength);
+        yield return new WaitForSeconds(0.05f);
+        nextButton.SetActive(true);
+        eventPos = 10;
+    }
+    IEnumerator EventTen()
+    {
+        // event 10
+        nextButton.SetActive(false);
+        charUnknown.SetActive(true);
+        textBox.SetActive(true);
+        // Text 
+        charName.GetComponent<TMPro.TMP_Text>().text = "???";
+        textToSpeak = "Our only problem is… We don’t have a tech department anymore.";
+        textBox.GetComponent<TMPro.TMP_Text>().text = textToSpeak;
+        currentTextLength = textToSpeak.Length;
+        TextCreator.runTextPrint = true;
+        yield return new WaitForSeconds(0.05f);
+        yield return new WaitForSeconds(1);
+        yield return new WaitUntil(()=> textLength == currentTextLength);
+        yield return new WaitForSeconds(0.05f);
+        nextButton.SetActive(true);
+        eventPos = 11;
+    }
+IEnumerator EventEleven()
+    {
+        // event 11
+        nextButton.SetActive(false);
+        charUnknown.SetActive(true);
+        textBox.SetActive(true);
+        // Text 
+        charName.GetComponent<TMPro.TMP_Text>().text = "???";
+        textToSpeak = "Our detective firm was defunded recently so, we had to do something we’ve never done before.";
+        textBox.GetComponent<TMPro.TMP_Text>().text = textToSpeak;
+        currentTextLength = textToSpeak.Length;
+        TextCreator.runTextPrint = true;
+        yield return new WaitForSeconds(0.05f);
+        yield return new WaitForSeconds(1);
+        yield return new WaitUntil(()=> textLength == currentTextLength);
+        yield return new WaitForSeconds(0.05f);
+        nextButton.SetActive(true);
+        eventPos = 12;
+    }
+    IEnumerator EventTweleve()
+    {
+        // event 12
+        nextButton.SetActive(false);
+        charUnknown.SetActive(true);
+        textBox.SetActive(true);
+        // Text 
+        charName.GetComponent<TMPro.TMP_Text>().text = "???";
+        textToSpeak = "Hire freelance “White Hat Hackers” to help us with this case. These freelancers have impressive resumes, but they don't have the experience with this line of work.";
+        textBox.GetComponent<TMPro.TMP_Text>().text = textToSpeak;
+        currentTextLength = textToSpeak.Length;
+        TextCreator.runTextPrint = true;
+        yield return new WaitForSeconds(0.05f);
+        yield return new WaitForSeconds(1);
+        yield return new WaitUntil(()=> textLength == currentTextLength);
+        yield return new WaitForSeconds(0.05f);
+        nextButton.SetActive(true);
+        eventPos = 13;
+    }
     public void NextButton()
     {
         if (eventPos == 1)
         {
             StartCoroutine(EventOne());
+        }
+        if (eventPos == 2)
+        {
+            StartCoroutine(EventTwo());
+        }
+        if (eventPos == 3)
+        {
+            StartCoroutine(EventThree());
+        }
+        if (eventPos == 4)
+        {
+            StartCoroutine(EventFour());
+        }
+        if (eventPos == 5)
+        {
+            StartCoroutine(EventFive());
+        }
+        if (eventPos == 5)
+        {
+            StartCoroutine(EventSix());
+        }
+        if (eventPos == 7)
+        {
+            StartCoroutine(EventSeven());
+        }
+        if (eventPos == 8)
+        {
+            StartCoroutine(EventEight());
+        }
+        if (eventPos == 9)
+        {
+            StartCoroutine(EventNine());
+        }
+        if (eventPos == 10)
+        {
+            StartCoroutine(EventTen());
+        }
+        if (eventPos == 11)
+        {
+            StartCoroutine(EventEleven());
+        }
+        if (eventPos == 12)
+        {
+            StartCoroutine(EventTweleve());
         }
 
     }

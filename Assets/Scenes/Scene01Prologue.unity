@@ -347,7 +347,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &352387351
 RectTransform:
   m_ObjectHideFlags: 0
@@ -683,6 +683,7 @@ GameObject:
   - component: {fileID: 853892364}
   - component: {fileID: 853892366}
   - component: {fileID: 853892365}
+  - component: {fileID: 853892367}
   m_Layer: 5
   m_Name: SpeakText
   m_TagString: Untagged
@@ -729,8 +730,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "In October of 202X, The MTA\u2019s intercoms were compromised, leading
-    to an accident and delays on the Lexington Avenue line."
+  m_text: 
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 263ff6770640c4853ae8ac0f767f1b2d, type: 2}
   m_sharedMaterial: {fileID: 1457453005687428506, guid: 263ff6770640c4853ae8ac0f767f1b2d, type: 2}
@@ -807,6 +807,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 853892363}
   m_CullTransparentMesh: 1
+--- !u!114 &853892367
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 853892363}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d871f1c4bcf9549c8ab3052f82a79254, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  transferText: 
+  internalCount: 0
 --- !u!1 &879273375
 GameObject:
   m_ObjectHideFlags: 0
@@ -975,9 +989,9 @@ RectTransform:
   - {fileID: 670491748}
   - {fileID: 1327667632}
   - {fileID: 191454967}
+  - {fileID: 1852775032}
   - {fileID: 352387351}
   - {fileID: 2031819375}
-  - {fileID: 1852775032}
   - {fileID: 1262691592}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1216,7 +1230,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1327667632
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1483,7 +1497,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &2031819375
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1548,13 +1562,13 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1026217752}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: 
+      - m_Target: {fileID: 1026217754}
+        m_TargetAssemblyTypeName: Scene01Events, Assembly-CSharp
+        m_MethodName: NextButton
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
