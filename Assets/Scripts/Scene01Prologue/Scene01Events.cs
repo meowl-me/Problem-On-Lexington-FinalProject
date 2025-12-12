@@ -10,7 +10,7 @@ public class Scene01Events : MonoBehaviour
     public GameObject fadeScreenIn;
     public GameObject charUnknown;
     public GameObject charDcarmineFade;
-     public GameObject charDcarmine;
+    public GameObject charDcarmine;
     // Text Variables
     public GameObject textBox;
     [SerializeField] string textToSpeak;
