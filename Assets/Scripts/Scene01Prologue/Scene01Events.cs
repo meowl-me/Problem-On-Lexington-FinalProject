@@ -63,7 +63,7 @@ public class Scene01Events : MonoBehaviour
         textBox.SetActive(true);
         // Text 
         charName.GetComponent<TMPro.TMP_Text>().text = "???";
-        textToSpeak = "This is very bad. NYC runs on trains.";
+        textToSpeak = "This is horrible. NYC runs on trains.";
         textBox.GetComponent<TMPro.TMP_Text>().text = textToSpeak;
         currentTextLength = textToSpeak.Length;
         TextCreator.runTextPrint = true;
@@ -101,7 +101,7 @@ public class Scene01Events : MonoBehaviour
         textBox.SetActive(true);
         // Text 
         charName.GetComponent<TMPro.TMP_Text>().text = "???";
-        textToSpeak = "We do suspect that the attack on the intercoms was a one person ordeal.";
+        textToSpeak = "We do suspect that the attack on the intercoms was done by a single person.";
         textBox.GetComponent<TMPro.TMP_Text>().text = textToSpeak;
         currentTextLength = textToSpeak.Length;
         TextCreator.runTextPrint = true;

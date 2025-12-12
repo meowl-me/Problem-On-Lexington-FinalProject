@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Scene02Events : MonoBehaviour
 {
@@ -135,7 +136,60 @@ IEnumerator EventOne()
         nextButton.SetActive(true);
         eventPos = 5;
     }
-    
+    IEnumerator EventFive()
+    {
+        // event 5
+        nextButton.SetActive(false);
+        charDossier.SetActive(false);
+        charJackie.SetActive(true);
+        charLevi.SetActive(true);
+        // Text 
+        charName.GetComponent<TMPro.TMP_Text>().text = "Levi";
+        textToSpeak = "This is... a lot. ";
+        textBox.GetComponent<TMPro.TMP_Text>().text = textToSpeak;
+        currentTextLength = textToSpeak.Length;
+        TextCreator.runTextPrint = true;
+        yield return new WaitForSeconds(0.05f);
+        yield return new WaitForSeconds(1);
+        yield return new WaitUntil(()=> textLength == currentTextLength);
+        yield return new WaitForSeconds(0.05f);
+        nextButton.SetActive(true);
+        eventPos = 6;
+    }
+    IEnumerator EventSix()
+    {
+        // event 5
+        nextButton.SetActive(false);
+        charJackie.SetActive(false);
+        charLevi.SetActive(false);
+        charJackieFade.SetActive(true);
+        charLeviFade.SetActive(true);
+        // Text 
+        charName.GetComponent<TMPro.TMP_Text>().text = "Jackie";
+        textToSpeak = "Honestly, I’m not sure where to start";
+        textBox.GetComponent<TMPro.TMP_Text>().text = textToSpeak;
+        currentTextLength = textToSpeak.Length;
+        TextCreator.runTextPrint = true;
+        yield return new WaitForSeconds(0.05f);
+        yield return new WaitForSeconds(1);
+        yield return new WaitUntil(()=> textLength == currentTextLength);
+        yield return new WaitForSeconds(0.05f);
+        nextButton.SetActive(true);
+        eventPos = 7;
+    }
+    IEnumerator EventSeven()
+    {
+        // event 15
+        nextButton.SetActive(false);
+        charLevi.SetActive(false);
+        charJackieFade.SetActive(true);
+        charLeviFade.SetActive(true);
+        // Text 
+        fadeOut.SetActive(true);
+        yield return new WaitForSeconds(2);
+        eventPos = 8;
+        SceneManager.LoadScene(4);
+    }
 
      public void NextButton()
     {
@@ -154,6 +208,18 @@ IEnumerator EventOne()
         if (eventPos == 4)
         {
             StartCoroutine(EventFour());
+        }
+        if (eventPos == 5)
+        {
+            StartCoroutine(EventFive());
+        }
+        if (eventPos == 6)
+        {
+            StartCoroutine(EventSix());
+        }
+        if (eventPos == 7)
+        {
+            StartCoroutine(EventSeven());
         }
     }
     
