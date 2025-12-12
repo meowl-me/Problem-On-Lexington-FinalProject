@@ -106,7 +106,7 @@ IEnumerator EventOne()
         charDossier.SetActive(true);
         // Text 
         charName.GetComponent<TMPro.TMP_Text>().text = "Detective Carmine";
-        textToSpeak = "This is why we need to catch these criminals quickly before the harm another train line.";
+        textToSpeak = "This is why we need to catch these criminals quickly before they harm another train line.";
         textBox.GetComponent<TMPro.TMP_Text>().text = textToSpeak;
         currentTextLength = textToSpeak.Length;
         TextCreator.runTextPrint = true;
