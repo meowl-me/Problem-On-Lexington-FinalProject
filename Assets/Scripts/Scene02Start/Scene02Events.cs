@@ -50,7 +50,7 @@ public class Scene02Events : MonoBehaviour
         // Where text function will go
         mainTextObject.SetActive(true);
         charName.GetComponent<TMPro.TMP_Text>().text = "Detective Carmine";
-        textToSpeak = "This dossier contains the testimony give by Gary Mitchel. He is a 6 train conductor.";
+        textToSpeak = "This dossier contains the testimony given by Gary Mitchel. He's a 6 train conductor.";
         textBox.GetComponent<TMPro.TMP_Text>().text = textToSpeak;
         currentTextLength = textToSpeak.Length;
         TextCreator.runTextPrint = true;
@@ -81,12 +81,79 @@ IEnumerator EventOne()
         nextButton.SetActive(true);
         eventPos = 2;
     }
+    IEnumerator EventTwo()
+    {
+        // event 2
+        nextButton.SetActive(false);
+        charDossier.SetActive(true);
+        // Text 
+        charName.GetComponent<TMPro.TMP_Text>().text = "Detective Carmine";
+        textToSpeak = "It’s no doubt that he was one of the many train personnel who were affected during the intercom attack in October.";
+        textBox.GetComponent<TMPro.TMP_Text>().text = textToSpeak;
+        currentTextLength = textToSpeak.Length;
+        TextCreator.runTextPrint = true;
+        yield return new WaitForSeconds(0.05f);
+        yield return new WaitForSeconds(1);
+        yield return new WaitUntil(()=> textLength == currentTextLength);
+        yield return new WaitForSeconds(0.05f);
+        nextButton.SetActive(true);
+        eventPos = 3;
+    }
+    IEnumerator EventThree()
+    {
+        // event 3
+        nextButton.SetActive(false);
+        charDossier.SetActive(true);
+        // Text 
+        charName.GetComponent<TMPro.TMP_Text>().text = "Detective Carmine";
+        textToSpeak = "This is why we need to catch these criminals quickly before the harm another train line.";
+        textBox.GetComponent<TMPro.TMP_Text>().text = textToSpeak;
+        currentTextLength = textToSpeak.Length;
+        TextCreator.runTextPrint = true;
+        yield return new WaitForSeconds(0.05f);
+        yield return new WaitForSeconds(1);
+        yield return new WaitUntil(()=> textLength == currentTextLength);
+        yield return new WaitForSeconds(0.05f);
+        nextButton.SetActive(true);
+        eventPos = 4;
+    }
+    IEnumerator EventFour()
+    {
+        // event 4
+        nextButton.SetActive(false);
+        charDossier.SetActive(true);
+        // Text 
+        charName.GetComponent<TMPro.TMP_Text>().text = "Detective Carmine";
+        textToSpeak = "We don’t want another taking of Pelham 123.";
+        textBox.GetComponent<TMPro.TMP_Text>().text = textToSpeak;
+        currentTextLength = textToSpeak.Length;
+        TextCreator.runTextPrint = true;
+        yield return new WaitForSeconds(0.05f);
+        yield return new WaitForSeconds(1);
+        yield return new WaitUntil(()=> textLength == currentTextLength);
+        yield return new WaitForSeconds(0.05f);
+        nextButton.SetActive(true);
+        eventPos = 5;
+    }
+    
 
      public void NextButton()
     {
         if (eventPos == 1)
         {
             StartCoroutine(EventOne());
+        }
+        if (eventPos == 2)
+        {
+            StartCoroutine(EventTwo());
+        }
+        if (eventPos == 3)
+        {
+            StartCoroutine(EventThree());
+        }
+        if (eventPos == 4)
+        {
+            StartCoroutine(EventFour());
         }
     }
     
