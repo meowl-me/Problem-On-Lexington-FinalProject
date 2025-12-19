@@ -10,6 +10,8 @@ public class Scene02Events : MonoBehaviour
     public GameObject fadeScreenIn;
     public GameObject charDcarmineFade;
     public GameObject charDcarmine;
+    public GameObject charDcarmineMC;
+    public GameObject charDcarmineAngry;
     public GameObject charJackieFade;
     public GameObject charJackie;
     public GameObject charLeviFade;
@@ -158,7 +160,7 @@ IEnumerator EventOne()
     }
     IEnumerator EventSix()
     {
-        // event 5
+        // event 6
         nextButton.SetActive(false);
         charJackie.SetActive(false);
         charLevi.SetActive(false);
@@ -179,15 +181,76 @@ IEnumerator EventOne()
     }
     IEnumerator EventSeven()
     {
-        // event 15
+        // event 7
         nextButton.SetActive(false);
         charLevi.SetActive(false);
+        charJackieFade.SetActive(false);
+        charLeviFade.SetActive(false);
+        charDcarmineMC.SetActive(true);
+        // Text 
+        charName.GetComponent<TMPro.TMP_Text>().text = "Detective Carmine";
+        textToSpeak = "...";
+        textBox.GetComponent<TMPro.TMP_Text>().text = textToSpeak;
+        currentTextLength = textToSpeak.Length;
+        TextCreator.runTextPrint = true;
+        yield return new WaitForSeconds(0.05f);
+        yield return new WaitForSeconds(1);
+        yield return new WaitUntil(()=> textLength == currentTextLength);
+        yield return new WaitForSeconds(0.05f);
+        nextButton.SetActive(true);
+        eventPos = 8;
+    }
+
+    IEnumerator EventEight()
+    {
+        // event 8
+        nextButton.SetActive(false);
+        charDcarmineMC.SetActive(false);
+        charDcarmineAngry.SetActive(true);
+        // Text 
+        charName.GetComponent<TMPro.TMP_Text>().text = "Detective Carmine";
+        textToSpeak = "Well, I would like more intel on criminals by the end of your shifts. Time is not on our side. I’ll leave you two to it. Don’t disappoint me.";
+        textBox.GetComponent<TMPro.TMP_Text>().text = textToSpeak;
+        currentTextLength = textToSpeak.Length;
+        TextCreator.runTextPrint = true;
+        yield return new WaitForSeconds(0.05f);
+        yield return new WaitForSeconds(1);
+        yield return new WaitUntil(()=> textLength == currentTextLength);
+        yield return new WaitForSeconds(0.05f);
+        nextButton.SetActive(true);
+        eventPos = 9;
+    }
+
+    IEnumerator EventNine()
+    {
+        // event 9
+        nextButton.SetActive(false);
+        charDcarmineAngry.SetActive(false);
         charJackieFade.SetActive(true);
-        charLeviFade.SetActive(true);
+        charLevi.SetActive(true);
+        // Text 
+        charName.GetComponent<TMPro.TMP_Text>().text = "Levi & Jackie";
+        textToSpeak = "Yes Ma'am!";
+        textBox.GetComponent<TMPro.TMP_Text>().text = textToSpeak;
+        currentTextLength = textToSpeak.Length;
+        TextCreator.runTextPrint = true;
+        yield return new WaitForSeconds(0.05f);
+        yield return new WaitForSeconds(1);
+        yield return new WaitUntil(()=> textLength == currentTextLength);
+        yield return new WaitForSeconds(0.05f);
+        nextButton.SetActive(true);
+        eventPos = 10;
+    }
+
+    IEnumerator EventTen()
+    {
+        // event 10
+        nextButton.SetActive(false);
+        textBox.SetActive(true);
         // Text 
         fadeOut.SetActive(true);
         yield return new WaitForSeconds(2);
-        eventPos = 8;
+        eventPos = 11;
         SceneManager.LoadScene(4);
     }
 
@@ -220,6 +283,18 @@ IEnumerator EventOne()
         if (eventPos == 7)
         {
             StartCoroutine(EventSeven());
+        }
+        if (eventPos == 8)
+        {
+            StartCoroutine(EventEight());
+        }
+        if (eventPos == 9)
+        {
+            StartCoroutine(EventNine());
+        }
+        if (eventPos == 10)
+        {
+            StartCoroutine(EventTen());
         }
     }
     

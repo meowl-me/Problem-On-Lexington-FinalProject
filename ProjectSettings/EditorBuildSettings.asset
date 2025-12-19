@@ -18,6 +18,9 @@ EditorBuildSettings:
     path: Assets/Scenes/Scene02Start.unity
     guid: 669b6744085374dfc841974b28969326
   - enabled: 1
+    path: Assets/Scenes/Scene03Investagation.unity
+    guid: 4b62cccd3797849e4a77455aef685121
+  - enabled: 1
     path: Assets/Scenes/WIP.unity
     guid: 8156ba1fef458475c924f6e507919bef
   m_configObjects: {}
