@@ -127,7 +127,7 @@ IEnumerator EventOne()
         charDossier.SetActive(true);
         // Text 
         charName.GetComponent<TMPro.TMP_Text>().text = "Detective Carmine";
-        textToSpeak = "We don’t want another taking of Pelham 123.";
+        textToSpeak = "We don’t want another 'Taking of Pelham 123.'";
         textBox.GetComponent<TMPro.TMP_Text>().text = textToSpeak;
         currentTextLength = textToSpeak.Length;
         TextCreator.runTextPrint = true;
@@ -254,7 +254,7 @@ IEnumerator EventOne()
         SceneManager.LoadScene(4);
     }
 
-     public void NextButton()
+    public void NextButton()
     {
         if (eventPos == 1)
         {
