@@ -365,7 +365,7 @@ IEnumerator EventEleven()
         {
             StartCoroutine(EventFive());
         }
-        if (eventPos == 5)
+        if (eventPos == 6)
         {
             StartCoroutine(EventSix());
         }

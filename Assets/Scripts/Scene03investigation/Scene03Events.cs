@@ -434,26 +434,14 @@ public class Scene03Events : MonoBehaviour
     }
     IEnumerator EventSeventeen()
     {
-        // event 6 
+        // event 2
         nextButton.SetActive(false);
-        charLeviNeuOM.SetActive(false);
-        charJackieAngryCM.SetActive(true);
-        charJackieAngryOM.SetActive(false);
-        charLeviAngryOM.SetActive(false);
-        charLeviAngryCM.SetActive(true);
-        // Where text function will go
-        mainTextObject.SetActive(true);
-        charName.GetComponent<TMPro.TMP_Text>().text = "???";
-        textToSpeak = "Choices";
-        textBox.GetComponent<TMPro.TMP_Text>().text = textToSpeak;
-        currentTextLength = textToSpeak.Length;
-        TextCreator.runTextPrint = true;
-        yield return new WaitForSeconds(0.05f);
-        yield return new WaitForSeconds(1);
-        yield return new WaitUntil(()=> textLength == currentTextLength);
-        yield return new WaitForSeconds(0.05f);
-        nextButton.SetActive(true);
+        textBox.SetActive(true);
+        // Text 
+        fadeOut.SetActive(true);
+        yield return new WaitForSeconds(2);
         eventPos = 18;
+        SceneManager.LoadScene(7);
     }
     
 
@@ -527,7 +515,6 @@ public class Scene03Events : MonoBehaviour
         {
             StartCoroutine(EventSeventeen());
         }
-
         
     }
 
